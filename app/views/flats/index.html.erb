@@ -1,0 +1,42 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Simple Airbnb</a>
+  <div class="ml-auto">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <a class="btn btn-outline-primary my-2 my-sm-0 ml-2" href="/flats/new">Add Flat</a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1>All our Flats(<%= Flat.count%>)</h1>
+  <div class="grid-flat">
+    <% @flats.each do |flat| %>
+        <div class="flat card">
+          <div class="info">
+            <div class="titre text-center pt-2">
+              <h3><%= flat.name %></h3>
+              <p><%= flat.description %></p>
+            </div>
+            <div class="info-icone">
+              <div class="guest">
+                <i class="fas fa-users"></i>
+                <span><%= flat.number_of_guests %></span>
+              </div>
+              <div class="price">
+                <i class="fas fa-dollar-sign"></i>
+                <span><%= flat.price_per_night %></span>
+              </div>
+            </div>
+          </div>
+          <div class="action">
+            <%= link_to "More info", flat_path(flat), :class => "button-info" %>
+            <%= link_to "Edit", edit_flat_path(flat), :class => "button-edit" %>
+            <%= link_to "Remove", flat_path(flat), method: :delete, data: { confirm: 'Are you sure?' }, :class => "button-remove" %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+

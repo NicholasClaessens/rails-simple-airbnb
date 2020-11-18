@@ -1,0 +1,76 @@
+// Import page-specific CSS files here.
+@import "home";
+
+body {
+  background-color: white;
+}
+
+.grid-flat {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.info {
+  min-height: 300px;
+}
+
+.info-icone {
+  display: flex;
+}
+
+.ml-auto {
+    display: flex;
+}
+
+h1 {
+  padding-top: 30px;
+}
+
+.info {
+  padding: 25px;
+  background-color: rgb(240, 240, 240)
+}
+
+.action {
+  padding: 15px;
+}
+
+.action a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.button-info {
+  text-decoration: none;
+}
+
+.button-edit {
+  text-decoration: none;
+  color: gold;
+}
+
+.button-remove {
+  text-decoration: none;
+  color: red;
+}
+
+.fas {
+  margin-right: 3px;
+}
+
+span {
+  padding-right: 40px;
+}
+
+.fa-users {
+  padding-left: 90px;
+}
+
+.form-inputs {
+  text-align: center;
+}
+
+.form-actions {
+  text-align: center;
+}
